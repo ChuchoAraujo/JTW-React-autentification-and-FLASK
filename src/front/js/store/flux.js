@@ -33,6 +33,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
+
+			logOut: () => {
+				sessionStorage.removeItem("Token")
+				console.log("log out")
+				setStore({Token: null })
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

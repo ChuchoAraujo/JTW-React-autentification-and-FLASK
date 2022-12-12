@@ -5,3 +5,20 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+body {
+    background-color: rgb(167, 227, 238);
+}
+
+.labelText {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.containerLogin {
+    margin-top: 50px;
+}
+
+img {
+    border-radius: 20px;
+}
