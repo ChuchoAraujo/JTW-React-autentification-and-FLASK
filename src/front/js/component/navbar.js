@@ -11,8 +11,8 @@ export const Navbar = () => {
 
 
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
+		<nav className="navbar navbar navegador">
+			<div className="container mb-2 mt-2">
 				<div >
 					<AiFillFacebook  fontSize={30} />
 					<AiFillInstagram className="ms-2" fontSize={30} />

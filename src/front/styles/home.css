@@ -7,7 +7,7 @@
 */
 
 body {
-    background-color: rgb(167, 227, 238);
+    background-color: #82CFC3
 }
 
 .labelText {
@@ -21,4 +21,14 @@ body {
 
 img {
     border-radius: 20px;
+}
+
+.titulo {
+    margin: 40px;
+     font-size: 70px;
+   
+}
+
+.navegador {
+    background-color: #6AA89F;
 }

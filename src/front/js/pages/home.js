@@ -76,51 +76,42 @@ export const Home = () => {
 
 	return (
 		<>
-			{/* ------------------------------------------------CONTENEDOR SIGN UP --------------------------------------------------------------------*/}
-
-			<form className="container row align-items-center">
-				<div className="text-center col-6">
-					<div class="mb-3">
-						<h1 className="labelText">Sign up</h1>
-						<input type="text" className="form-control mt-3" placeholder="email" onChange={(event) => setEmail(event.target.value)}></input>
-					</div>
-					<div class="mb-3">
-						<input type="password" placeholder="password" className="form-control" onChange={(event) => setPassword(event.target.value)}></input>
-					</div>
-
-					<button type="submit" className="btn btn-success ms-3 mt-2" onClick={enviarDatos}>Send</button>
-
+			<div><h1 className="text-center titulo">Bienvenidos al club de perritos!</h1></div>
+			<div className="row align-items-center text-center mt-5">
+				<div className="col-6 align-items-center">
+					<h1>Registro</h1>
+					<input type="email" className="mt-3" placeholder="email" onChange={(event) => setEmail(event.target.value)}></input>
+					<input type="password" placeholder="password" className="ms-3" onChange={(event) => setPassword(event.target.value)}></input>
+					<button className=" btn btn-success ms-3" type="submit" onClick={enviarDatos} >Enviar</button>
 				</div>
-
-				{mensaje &&
-					<div className="text-center alert alert-danger" role="alert">
-						{mensaje}
-					</div>}
-
 				<div className="col-6">
-					<img src="https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"></img>
+					<img width={900} src="https://images.unsplash.com/photo-1615266895738-11f1371cd7e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"></img>
 				</div>
 
+			</div>
 
-				{/* ------------------------------------------------CONTENEDOR LOGIN --------------------------------------------------------------------*/}
+			{mensaje &&
+				<div className="text-center alert alert-danger" role="alert">
+					{mensaje}
+				</div>}
 
-				<div className="container row align-items-center mt-5 containerLogin">
-					<div className="text-center mt-5 col-6">
-						<h1>Login</h1>
-						<input className="mt-3 form-control" placeholder="email" onChange={(event) => setEmail(event.target.value)}></input>
-						<input type="password" placeholder="password" className="mt-3 form-control" onChange={(event) => setPassword(event.target.value)}></input>
-						<button className="btn btn-success ms-3 mt-4" onClick={login}>Enter</button>
-					</div>
 
-					{error &&
-						<div class="alert alert-danger" role="alert">
-							{error}
-						</div>}
-					<div className="col-6 mt-5">
-						<img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"></img>
-					</div>
+			<div className="row align-items-center text-center mt-5">
+				<div className="col-6 align-items-center">
+					<h1>Login</h1>
+					<input type="email" className="mt-3" placeholder="email" onChange={(event) => setEmail(event.target.value)}></input>
+					<input type="password" placeholder="password" className="ms-3" onChange={(event) => setPassword(event.target.value)}></input>
+					<button className="btn btn-success ms-3" onClick={login}>Entrar</button>
 				</div>
-			</form>
+				<div className="col-6">
+					<img width={700} src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"></img>
+				</div>
+			</div>
+
+			{error &&
+				<div class="alert alert-danger" role="alert">
+					{error}
+				</div>}
 		</>
 	);
 };
