@@ -28,19 +28,25 @@ def createUser():
     password = request.json.get("password", None)
     is_active = request.json.get("is_active", None)
     
-    newUser = User(
+    user= User.query.filter_by(email=email).first()
+    if user:
+        return jsonify({"msgInvalid": "User or password, invalid!"}), 401
+
+    try:
+        newUser = User(
         email=email,
         password=password,
         is_active= is_active
     )
-    db.session.add(newUser)
-    db.session.commit()
+        db.session.add(newUser)
+        db.session.commit()
 
-    if(newUser == newUser):
-        return jsonify({"msgInvalid": "User or password, invalid!"})
+    except Exception as e:
+        return jsonify({"error": e}), 402
+    
 
     response_body = {"msg": "User create"}
-    return jsonify(response_body)
+    return jsonify(response_body), 201
 
 
 #-----------------------------POST LOGIN------------------------------------#
